@@ -223,21 +223,21 @@ function Collection() {
             >
                 <DialogContent className='bg-font-900'>
                     <div className='text-center'>
-                        {/* <h1 className='text-3xl'>Mint Live Soon</h1> */}
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
-                        <input onChange={(e) => { setAddress(e.target.value) }} type="text" placeholder='bc1...' class="focus:outline-none block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500" />
-                        {load === 'default' &&
-                            <button onClick={() => { handleMint(selectedTag, selectedId) }} className='text-white mt-4 border-2 border-white px-4 py-1 rounded-lg hover:bg-white hover:text-font-900 transition-all duration-200'>Pay</button>
-                        }
-                        {load === 'checking' &&
-                            <span className='text-xs text-white pt-2'>Checking availability...</span>
-                        }
-                        {load === 'ready' &&
-                            <span className='text-xs text-white pt-2'>Ready to mint...</span>
-                        }
-                        {load === 'pending' &&
-                            <span className='text-xs text-white pt-2'>Sorry. This Potatoz is no longer available. :(</span>
-                        }
+                        <h1 className='text-3xl'>Mint Live Soon</h1>
+//                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+//                         <input onChange={(e) => { setAddress(e.target.value) }} type="text" placeholder='bc1...' class="focus:outline-none block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500" />
+//                         {load === 'default' &&
+//                             <button onClick={() => { handleMint(selectedTag, selectedId) }} className='text-white mt-4 border-2 border-white px-4 py-1 rounded-lg hover:bg-white hover:text-font-900 transition-all duration-200'>Pay</button>
+//                         }
+//                         {load === 'checking' &&
+//                             <span className='text-xs text-white pt-2'>Checking availability...</span>
+//                         }
+//                         {load === 'ready' &&
+//                             <span className='text-xs text-white pt-2'>Ready to mint...</span>
+//                         }
+//                         {load === 'pending' &&
+//                             <span className='text-xs text-white pt-2'>Sorry. This Potatoz is no longer available. :(</span>
+//                         }
                     </div>
                 </DialogContent >
             </Dialog >
