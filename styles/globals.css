@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #1f1f1f;
+  font-family: 'RocknRoll One', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.content-tag{
+  opacity: 0;
+}
+
+.wrapper-tag:hover > .content-tag {
+  opacity: 1;
+}
+
+.wrapper-tag:hover > .img-tag {
+  filter: none !important;
+}
