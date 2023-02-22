@@ -22,8 +22,7 @@ export default function Home() {
 
       <div className="bg-dark-900 w-screen h-full text-font-900 pt-24">
         <div className='text-center mb-6'>
-          <h1 className='text-5xl'>Potatoz<button className='px-2' onClick={() => { setOpen(true) }}>📖</button>
-          </h1>
+          <h1 className='text-5xl'>Potatoz</h1>
           <span className='text-xl'>Mint</span>
           <Image src="/assets/potatoz.gif" alt="" className='mx-auto my-4 rounded-lg' width={100} height={100} style={{ width: '25vh' }} />
           <p className='text-md'>READY OR NOT 🎇 100 pixelated Potatoz arrived on BTC Chain</p>

@@ -10,6 +10,7 @@ function Collection() {
     const [selectedTag, setSelectedTag] = useState('');
     const [selectedId, setSelectedId] = useState('');
     const [open, setOpen] = useState(false);
+    const [openGuide, setOpenGuide] = useState(false);
     const [filter, setFilter] = useState('available');
     const [remaining, setRemaining] = useState(0);
     const [recordData, setRecordData] = useState([]);
@@ -144,9 +145,15 @@ function Collection() {
 
     return (
         <div className='max-w-6xl 2xl:max-w-7xl mx-auto pb-24'>
-            <div className='text-center mb-4'>
-                <span>Remaining:</span>
-                <p>{remaining}/100</p>
+            <div className='flex justify-center w-full space-x-4'>
+                <div className='text-center mb-4'>
+                    <span>Remaining</span>
+                    <p>{remaining}/100</p>
+                </div>
+                {/* <div className='text-center mb-4'>
+                    <span>Price</span>
+                    <p>0.006</p>
+                </div> */}
             </div>
             <div className='md:flex px-8 md:px-0 items-center md:space-x-2 justify-center pb-6'>
                 <p className='pb-2 md:pb-0'>Filter by: </p>
@@ -176,6 +183,11 @@ function Collection() {
                         </label>
                     </li>
                 </ul>
+                <div className='space-x-1 text-center mt-2 md:mt-0'>
+                    <button className='border border-font-900 px-2' onClick={() => { setOpenGuide(true) }}>Guides</button>
+                    <a className='border border-font-900 px-2' href='https://discord.gg/AS4zcDUSmK' target="_blank">Discord</a>
+                    <a className='border border-font-900 px-2' href='https://twitter.com/potatozonbtc' target="_blank">Twitter</a>
+                </div>
             </div>
             <div className='grid grid-cols-10'>
                 {recordData.map(function (item, i) {
@@ -193,9 +205,9 @@ function Collection() {
                                             <span>Mint</span>
                                         </button>
                                         : item.status === 'minted' ?
-                                            <div>
+                                            <a href={item.ord} target="_blank">
                                                 <span>ORD</span>
-                                            </div>
+                                            </a>
                                             :
                                             <div>
                                                 <span>Pending</span>
@@ -224,6 +236,47 @@ function Collection() {
                 <DialogContent className='bg-font-900'>
                     <div className='text-center'>
                         <h1 className='text-3xl'>Mint Live Soon</h1>
+                    </div>
+                </DialogContent >
+            </Dialog >
+            <Dialog
+                fullWidth={true}
+                maxWidth='sm'
+                open={openGuide}
+                onClose={() => {
+                    setOpenGuide(false);
+                }}
+            >
+                <DialogContent className='bg-font-900'>
+                    <div className='text-center'>
+
+                        <ol class="relative border-l border-white px-10">
+                            <li class="mb-10 ml-4">
+                                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                <h3 class="text-lg font-semibold text-gray-900 text-white">Step 1</h3>
+                                <p class="mb-4 text-base font-normal text-white">Choose your Potatoz to mint, make sure Potatoz status is Available to mint.</p>
+                                <img className='mx-auto' src='/assets/step/step1.jpg' style={{ width: '30vh' }} />
+                            </li>
+                            <li class="mb-10 ml-4">
+                                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                <h3 class="text-lg font-semibold text-gray-900 text-white">Step 2</h3>
+                                <p class="mb-4 text-base font-normal text-white">Fill your input address with your BTC Wallet Address, make payment by click "Pay" button, you will directly redirect to Payment link. (Complete the payment before the time runs out, the time limit is 10 minutes.)</p>
+                                <img className='mx-auto' src='/assets/step/step2.jpg' style={{ width: '30vh' }} />
+                                <img className='mx-auto' src='/assets/step/step3.jpg' style={{ width: '30vh' }} />
+                            </li>
+                            <li class="mb-10 ml-4">
+                                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                <h3 class="text-lg font-semibold text-gray-900 text-white">Step 4</h3>
+                                <p class="mb-4 text-base font-normal text-white">Your Potatoz will change to Pending status if you not finish your payment yet.</p>
+                            </li>
+                            <li class="ml-4">
+                                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                <h3 class="text-lg font-semibold text-gray-900 text-white">Step 5</h3>
+                                <p class="mb-4 text-base font-normal text-white">After payment is successful, your Potatoz status will changed to Minted. Now your Potatoz is all yours.</p>
+                                <img className='mx-auto' src='/assets/step/step5.jpg' style={{ width: '30vh' }} />
+                            </li>
+                        </ol>
+
                     </div>
                 </DialogContent >
             </Dialog >
